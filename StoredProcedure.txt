@@ -1,0 +1,19 @@
+drop procedure changePassword//
+
+CREATE PROCEDURE changePassword(IN loginName varchar(10), IN oldPassword varchar(10), IN newPassword varchar(10)) 
+BEGIN
+  DECLARE old varchar(10);
+  SELECT password INTO @old FROM users WHERE login=loginName;
+  IF @old = oldPassword THEN
+    UPDATE users SET password=newPassword WHERE login=loginName;
+  END IF;
+END;
+
+//
+
+call changePassword('user1', 'pass2','pass5')
+//
+
+select * from users;
+//
+

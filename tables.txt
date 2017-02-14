@@ -1,0 +1,17 @@
+drop table questins;
+create table questions (
+	qno	integer primary key,
+	question varchar(100)
+);
+
+
+drop table users;
+create table users (
+login		varchar(10) primary key,
+password	varchar(10)
+);
+
+insert into users values('user1','user1');
+insert into users values('user2','user2');
+insert into users values('user3','user3');
+insert into users values('user4','user4');
